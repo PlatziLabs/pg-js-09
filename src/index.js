@@ -1,16 +1,28 @@
 import "./styles.css";
 import { runCode } from "./exercise";
 
-(() => {
-  const arrayA = [1, 2, 3, 4];
-  const arrayB = [5, 6, 7, 8];
-  const rta = runCode(arrayA, arrayB);
+(async () => {
+
+  let rta = '';
 
   document.getElementById("app").innerHTML = `
-  <h1>Title</h1>
-  <p>Array A: <code>${arrayA}</code></p>
-  <p>Array B: <code>${arrayB}</code></p>
-  <p>Response from <code>runCode</code>
-  <pre><code>${rta}</code></pre>
+    <h1>Fetch Util</h1>
+    <p><input id="input" value="https://api.escuelajs.co/api/v1/categories" type="text" /></p>
+    <p><button id="btn">Fetch</button></p>
+    <p>Response from <code>runCode</code>
+    <pre><code>${rta}</code></pre>
   `;
+
+  document.getElementById("btn").addEventListener("click", async () => {
+    const url = document.getElementById("input").value;
+    console.log(url);
+    rta = await runCode(url);
+    document.getElementById("app").innerHTML = `
+      <h1>Fetch Util</h1>
+      <p><input id="input" value="https://api.escuelajs.co/api/v1/categories" type="text" /></p>
+      <p><button id="btn">Fetch</button></p>
+      <p>Response from <code>runCode</code>
+      <pre><code>${rta}</code></pre>
+    `;
+  });
 })();
