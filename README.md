@@ -1,17 +1,48 @@
-En este desafío debes crear una función que usando fetch haga llamadas a APIS  y debe contar las siguientes características:
+En este desafío debes crear una función que usando `fetch` haga llamadas a APIs y debe contar las siguientes características:
 
-- Realice la transformación a JSON
-- Solo permitir hacer peticiones GET
-- Recibir como parámetro de entrado un string que será la URL
-- Validar que una URL seá correcta, si no lo es debe lanzar un error con el mensaje "Invalid URL"
-- Si la URL tiene el formato correcto pero no existe debería lanzar un error con el mensaje "Something was wrong"
+- Realiza la transformación de datos a JSON
+- Solo permite hacer peticiones tipo GET
+- Recibir como parámetro de entrada un string que será la URL
+- Validar que una URL sea correcta, si no lo es debe lanzar un error con el mensaje `Invalid URL`
+- Si la URL tiene el formato correcto, pero no existe, debería lanzar un error con el mensaje `Something was wrong`
 
-La solución debería tener un input como el siguiente:
+La solución debería tener un input y ouput como los siguientes:
 
 Input
 
 ```js
-fetchData('https://api.escuelajs.co/api/v1/categories'); // return data in json
-fetchData('----'); // Error: Invalid URL
-fetchData('https://domain-a.com/api-1'); // Error: Something was wrong
+await fetchData('https://api.escuelajs.co/api/v1/categories');
+```
+
+Output
+
+```js
+// return data in json
+[...]
+```
+
+Input
+
+```js
+await fetchData('----');
+```
+
+
+Output
+
+```js
+// Error: Invalid URL
+```
+
+Input
+
+```js
+await fetchData('https://domain-a.com/api-1');
+```
+
+
+Output
+
+```js
+// Error: Something was wrong
 ```
