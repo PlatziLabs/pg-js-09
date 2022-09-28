@@ -7,7 +7,7 @@ export async function runCode(url) {
     if (error.message === "Failed to construct 'URL': Invalid URL"){
       throw new Error('Invalid URL');
     } else {
-      throw new Error('API Not Found');
+      throw new Error('Something was wrong');
     }
   }
 }
