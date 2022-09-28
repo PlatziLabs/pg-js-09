@@ -13,7 +13,7 @@ describe("tests", () => {
     expect(() => runCode('')).rejects.toThrowError(new Error("Invalid URL"));
   });
 
-  it("should throw a error with valid URL but inexistent URL", () => {
+  it("should throw an error with valid URL but inexistent URL", () => {
     expect(() => runCode('https://domain-a.com/api-1')).rejects.toThrowError(new Error("Something was wrong"));
     expect(() => runCode('https://domain-a.co/api-2')).rejects.toThrowError(new Error("Something was wrong"));
   });
